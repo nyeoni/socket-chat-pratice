@@ -1,0 +1,27 @@
+{
+  "name": "socket-chat-pratice",
+  "version": "1.0.0",
+  "description": "socket-chat-pratice",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chloekkk/socket-chat-pratice.git"
+  },
+  "author": "Chloekkk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chloekkk/socket-chat-pratice/issues"
+  },
+  "homepage": "https://github.com/Chloekkk/socket-chat-pratice#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
