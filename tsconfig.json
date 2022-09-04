@@ -1,11 +1,17 @@
 {
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
-    "module": "esnext", // set module system for the program.
-    "moduleResolution": "NodeNext",
-    "esModuleInterop": true, // import default module like import React from "react"
-    "target": "es2017",
-    "types": ["node"],
+	"baseUrl": ".",
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "types": [],
+    "noEmit": false
   },
-  "references": [{"path": "./client"}, {"path": "./server"}]
+  "exclude": ["node_modules/", "build/"],
 }

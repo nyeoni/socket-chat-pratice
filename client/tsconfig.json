@@ -1,9 +1,15 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
+	"target": "ES2017",
+	"lib": ["ESNext", "DOM"],
+	"allowJs": true,
 	"composite": true,
-	"module": "esnext", // set module system for the program.
-    "moduleResolution": "NodeNext",
+	"module": "ESNext", // set module system for the program.
+    "moduleResolution": "Node",
 	"esModuleInterop": true,
-    "lib": ["es2020", "DOM"]
+	"strict": true,
+	"outDir": "../build",
   },
+  "include": ["./src"]
 }
