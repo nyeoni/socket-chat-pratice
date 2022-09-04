@@ -21,7 +21,7 @@ export default class Router {
       '^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$'
     );
   }
-  static getParams = (match: {route: Route; result: string[]}) => {
+  static getParams = (match: {route: Route; result: any}) => {
     const values = match.result.slice(1);
     const keys = Array.from(match.route.getPath().matchAll(/:(\w+)/g)).map(
       result => result[1]
@@ -39,6 +39,12 @@ export default class Router {
         result: location.pathname.match(Router.pathToRegex(route.getPath())),
       };
     });
+    const match = matchRoutes.find(route => route !== null) ?? {
+      route: this.#routes[0],
+      result: [location.pathname],
+    };
+    const view = match.route.getView(Router.getParams(match));
+    return view.getHTML();
   }
 }
 
@@ -49,8 +55,11 @@ export class Route {
     this.#path = path;
     this.#component = component;
   }
-  async getComponent() {
+  getComponent() {
     return this.#component;
+  }
+  getView(params: Object) {
+    return new this.#component(params);
   }
   getPath() {
     return this.#path;
