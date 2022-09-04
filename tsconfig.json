@@ -1,0 +1,13 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "module": "ES6", // set module system for the program.
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true, // import default module like import React from "react"
+    "rootDir": "src/",
+    "outDir": "build/",
+    "target": "ES6",
+    "lib": ["es2020", "DOM"]
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts"]
+}

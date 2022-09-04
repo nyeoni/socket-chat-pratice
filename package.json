@@ -2,10 +2,19 @@
   "name": "socket-chat-pratice",
   "version": "1.0.0",
   "description": "socket-chat-pratice",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"router": "node build/router/Router.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "yarn run compile",
+    "pretest": "yarn run compile",
+    "posttest": "yarn run lint"
   },
   "repository": {
     "type": "git",
@@ -22,7 +31,10 @@
     "socket.io": "^4.5.1"
   },
   "devDependencies": {
+    "@types/node": "^14.11.2",
+    "gts": "^3.1.0",
     "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.2"
   }
 }
