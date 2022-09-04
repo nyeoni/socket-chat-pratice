@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
 	"composite": true,
+	"module": "esnext", // set module system for the program.
+    "moduleResolution": "NodeNext",
+	"esModuleInterop": true,
+    "lib": ["es2020", "DOM"]
   },
 }

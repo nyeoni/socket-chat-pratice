@@ -6,7 +6,6 @@
     "esModuleInterop": true, // import default module like import React from "react"
     "target": "es2017",
     "types": ["node"],
-    "lib": ["es2020", "DOM"]
   },
   "references": [{"path": "./client"}, {"path": "./server"}]
 }
