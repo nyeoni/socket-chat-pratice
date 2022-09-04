@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "socket-chat-pratice",
   "private": true,
-  "type": "module",
   "main": "index.js",
+  "type": "commonjs",
   "workspaces": [
     "client",
     "server"
   ],
   "scripts": {
-    "open": "node index.js",
-    "start": "yarn run build && yarn run open",
+    "start": "yarn workspace client build && ts-node server/src/index.ts",
     "build": "yarn run compile",
     "router": "node build/router/Router.js",
     "test": "echo \"Error: no test specified\" && exit 1",
