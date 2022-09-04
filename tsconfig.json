@@ -4,10 +4,9 @@
     "module": "esnext", // set module system for the program.
     "moduleResolution": "NodeNext",
     "esModuleInterop": true, // import default module like import React from "react"
-    "rootDir": "src/",
-    "outDir": "build/",
     "target": "es2017",
+    "types": ["node"],
     "lib": ["es2020", "DOM"]
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "references": [{"path": "./client"}, {"path": "./server"}]
 }
