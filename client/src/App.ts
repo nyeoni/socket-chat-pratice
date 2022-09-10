@@ -23,7 +23,7 @@ export default class App {
     this.html += '<h1>App</h1>';
 
     const BrowserRouter = new Router();
-    BrowserRouter.addRoute(new Route('/', HomePage));
+    BrowserRouter.addRoute(new Route('/web', HomePage));
     BrowserRouter.addRoute(new Route('/chat', ChatPage));
     this.html += await BrowserRouter.render();
 

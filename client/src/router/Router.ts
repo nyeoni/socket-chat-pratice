@@ -1,14 +1,16 @@
 import IComponent from '../interface/IComponent.js';
 export default class Router {
-  #routes: Route[];
+  private routes: Route[];
+  private prevPathname: string;
   constructor() {
-    this.#routes = [];
+    this.routes = [];
+    this.prevPathname = '';
   }
   addRoute(route: Route) {
-    this.#routes.push(route);
+    this.routes.push(route);
   }
   getRoutes() {
-    this.#routes.forEach((route: Route) => {
+    this.routes.forEach((route: Route) => {
       console.log(route);
     });
   }
@@ -32,14 +34,15 @@ export default class Router {
     return params;
   };
   render() {
-    const matchRoutes = this.#routes.map(route => {
+    // if (this.prevPathname === location.pathname) return;
+    const matchRoutes = this.routes.map(route => {
       return {
         route: route,
         result: location.pathname.match(Router.pathToRegex(route.getPath())),
       };
     });
     const match = matchRoutes.find(route => route.result !== null) ?? {
-      route: this.#routes[0],
+      route: this.routes[0],
       result: [location.pathname],
     };
     const view = match.route.getView(Router.getParams(match));

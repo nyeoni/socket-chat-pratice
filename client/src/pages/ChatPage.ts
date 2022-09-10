@@ -5,6 +5,10 @@ export default class ChatPage extends IComponent {
     super(params);
   }
   async getHTML(): Promise<string> {
-    return '<h1>ChatPage</h1>';
+    return `
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>`;
   }
 }
