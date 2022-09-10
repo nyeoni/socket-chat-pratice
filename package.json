@@ -10,11 +10,11 @@
     "server"
   ],
   "scripts": {
-    "start": "yarn workspace client build && ts-node server/src/index.ts",
+    "start": "yarn client && yarn style && yarn server",
+    "style": "npx tailwindcss -i style.css -o build/css/style.css",
+	"client": "yarn workspace client build",
+	"server": "ts-node server/src/index.ts",
     "build": "yarn run compile",
-    "style": "npx tailwindcss -c ./tailwindcss-config.js -i global.css -o build/css/output.css",
-    "router": "node build/router/Router.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc --build",
