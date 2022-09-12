@@ -33,7 +33,7 @@ export default class Router {
     });
     return params;
   };
-  render() {
+  route() {
     // if (this.prevPathname === location.pathname) return;
     const matchRoutes = this.routes.map(route => {
       return {
@@ -46,7 +46,8 @@ export default class Router {
       result: [location.pathname],
     };
     const view = match.route.getView(Router.getParams(match));
-    return view.getHTML();
+    console.log('holly', view);
+    return view;
   }
 }
 

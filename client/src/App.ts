@@ -1,32 +1,25 @@
+import IComponent from './interface/IComponent.js';
 import ChatPage from './pages/ChatPage.js';
 import HomePage from './pages/HomePage.js';
 import Router, {Route} from './router/Router.js';
 
-export default class App {
-  private html;
-  private static instance: App;
-  private constructor() {
-    this.html = '';
+export default class App extends IComponent {
+  constructor() {
+    super({});
   }
-  public static getInstance(): App {
-    if (!App.instance) {
-      App.instance = new App();
-    }
-    return App.instance;
-  }
-  async render() {
+  render() {
     // default view.getHTML()
     // Router class import
     // Router.addRoute(~) ~ n
     // Router.render -> routing 해야하는 것의 view.getHTML()
     // 이 모든 것을 리턴
-    this.html += '<h1>App</h1>';
 
+    // default html view
+    this.appendHTML('<h1>App</h1>');
+    // add routers
     const BrowserRouter = new Router();
     BrowserRouter.addRoute(new Route('/web', HomePage));
     BrowserRouter.addRoute(new Route('/chat', ChatPage));
-    this.html += await BrowserRouter.render();
-
-    return this.html;
+    this.dispatch(BrowserRouter.route());
   }
 }
