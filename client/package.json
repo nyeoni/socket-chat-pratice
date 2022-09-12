@@ -5,9 +5,15 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "esbuild src/main.ts --bundle --minify --sourcemap --outdir=../dist",
+    "test": "yarn build && nodemon -r esm"
   },
   "dependencies": {
+    "esbuild": "^0.15.7",
     "socket.io-client": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/esm": "^3",
+    "esm": "^3.2.25"
   }
 }
