@@ -9,7 +9,7 @@ const io = new Server(server);
 
 const PORT = 3000;
 
-app.use(express.static(path.join(__dirname, '../../build')));
+app.use('/public', express.static(path.join(__dirname, '../../dist')));
 
 app.get('*', (req, res) => {
   res.sendFile('index.html', {root: './server'});

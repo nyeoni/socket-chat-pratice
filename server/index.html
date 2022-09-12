@@ -8,31 +8,5 @@
     <div id="app">
     </div>
   </body>
-  <script type="module" src="/js/src/main.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-	window.onload = function() {
-    const socket = io();
-
-    const messages = document.getElementById('messages');
-    const form = document.getElementById('form');
-    const input = document.getElementById('input');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (input.value) {
-        socket.emit('chat message', input.value);
-        input.value = '';
-      }
-    });
-
-    socket.on('chat message', function (msg) {
-      const item = document.createElement('li');
-      item.textContent = msg;
-      messages.appendChild(item);
-      console.log('send messages');
-      window.scrollTo(0, document.body.scrollHeight);
-    });
-	}
-  </script>
+  <script type="text/javascript" src="/public/main.js"></script>
 </html>
