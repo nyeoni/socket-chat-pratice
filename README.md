@@ -1,12 +1,12 @@
 # socket-chat-pratice
 
- SPA(Single Page Application) 을 바닐라 자바스크립트로 직접 구현해보려하였다. SPA 란 서버로부터 `html` 파일을 받아오는 것이 아니라, 하나의 `html` 에서 자바스크립트를 통해 동적으로 화면을 바꿔가면서 표시하도록 하는 것이다. 추가적으로 `SPA` 프로젝트 구현 후 `[socket.io](http://socket.io)` 를 통한 채팅 프로그램을 만들어보려 한다.
+ **SPA(Single Page Application)** 을 바닐라 자바스크립트로 직접 구현해보려하였다. SPA 란 서버로부터 `html` 파일을 받아오는 것이 아니라, 하나의 `html` 에서 자바스크립트를 통해 동적으로 화면을 바꿔가면서 표시하도록 하는 것이다. 추가적으로 `SPA` 프로젝트 구현 후 `socket.io` 를 통한 채팅 프로그램을 만들어보려 한다.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/51353146/189850546-2f653b30-0b1f-46c5-8322-f0ce47577753.png" width="500"/>
 </p>
 
-프로젝트 구조
+**프로젝트 구조**
 
 - `IComponent.ts` : 페이지 혹은 컴포넌트를 위한 Component 클래스
 - `Router.ts` : view 들의 routing 을 지원하는 모듈
@@ -106,7 +106,7 @@
 
 ### 후기
 
-- `esbuild` 를 사용해서 번거로웠던 의존성 고려우 할 필요가 없어짐
+- `esbuild` 를 사용해서 번거로웠던 의존성 고려를 할 필요가 없어짐
 - `sourceMap` 을 생성해주는 기능을 사용하여 브라우저에서 디버깅할때 편리함
 - 병렬처리로 빠르게 코드들간의 의존성을 파악하고 번들링해주어 개발시간이 단축됨
 - `.js` 등의 확장자를 붙어주지 않아도 알아서 해결해주기때문에 편리함
